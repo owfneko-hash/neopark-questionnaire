@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- ↓これがスマホで適切なサイズで表示するための超重要タグです↓ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>アンケートフォーム</title>
+  
+  <style>
+    /* ページ全体のデザイン設定 */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0ebf8; /* Googleフォームっぽい薄紫の背景色 */
+      font-family: sans-serif;
+    }
+
+    /* フォーム（iframe）のデザイン設定 */
+    .form-container {
+      width: 100%;
+      max-width: 640px; /* PCで見ても横に広がりすぎないようにする */
+      margin: 0 auto;   /* 画面の中央に配置する */
+    }
+
+    iframe {
+      width: 100%;
+      height: 3199px; /* Googleフォームが指定した高さ */
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 読み込み回数をカウントしてリダイレクトするJavaScript -->
+  <script>
+    let loadCount = 0;
+    function checkSubmit() {
+      loadCount++;
+      // 2回目の読み込み（送信完了画面の表示）を検知したら遷移する
+      if (loadCount === 2) {
+        // ★↓ ここに回答後に飛ばしたいURLを入力してください ↓★
+        window.location.href = "https://sites.google.com/view/toge-gacha/%E3%83%9B%E3%83%BC%E3%83%A0"; 
+      }
+    }
+  </script>
+
+  <!-- 2. Googleフォームの埋め込み -->
+  <div class="form-container">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdqtT67V-cm44eymJ0AIFfEFxqVo_5KCpLGKp4px0pbdZIeog/viewform?embedded=true" 
+      onload="checkSubmit()"
+    >読み込んでいます…</iframe>
+  </div>
+
+</body>
+</html>
