@@ -2,18 +2,57 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>アンケートへ移動中...</title>
-  <script>
-    // ★ここに末尾が /exec のGASのURLを貼り付けてください★
-    const gasUrl = "https://script.google.com/macros/s/AKfycbyYx1MhGO-gIaSr03GCXZVCtfTAvyCusI1ur_UiIqAg8NuuePUgjZjfqEHqM-BmsKqQ/exec";
-    window.location.replace(gasUrl);
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>アンケートにご協力ください。</title>
+  <style>
+    body { margin: 0; padding: 16px; background-color: #f0ebf8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #202124; }
+    .container { max-width: 640px; margin: 0 auto; }
+    .header-card { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border-top: 10px solid #673ab7; }
+    .header-card h1 { font-size: 24px; margin: 0 0 8px 0; }
+    .header-card p { font-size: 14px; margin: 0; white-space: pre-wrap; color: #5f6368; }
+    .q-card { background: #fff; border-radius: 8px; padding: 24px; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+    .q-title { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+    .required { color: #d93025; margin-left: 4px; }
+    .q-help { font-size: 12px; color: #5f6368; margin-bottom: 12px; }
+    input[type="text"], textarea, select { width: 100%; padding: 10px; border: 1px solid #dadce0; border-radius: 4px; font-size: 16px; box-sizing: border-box; margin-top: 8px; }
+    .choice-label { display: flex; align-items: center; padding: 8px 0; font-size: 15px; cursor: pointer; }
+    .choice-label input { margin-right: 12px; transform: scale(1.2); }
+    button { background-color: #673ab7; color: white; border: none; padding: 12px 28px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 8px; }
+  </style>
 </head>
 <body>
-  <p>画面が切り替わらない場合は、<a id="link" href="#">こちらをタップ</a>してください。</p>
-  <script>
-    document.getElementById("link").href = gasUrl;
-  </script>
+  <div class="container">
+    <div class="header-card">
+      <h1>アンケートにご協力ください。</h1>
+      <p></p>
+    </div>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdKtAo1Zhtmyd4OWet2b_btq-oN6ev16Q12QG49q95KuTd1Pg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+    <div class="q-card">
+      <div class="q-title">回答者の年齢を教えてください。<span class="required">*</span></div>
+      
+      <select name="entry.741754654" required><option value="">選択してください</option><option value="～10歳">～10歳</option><option value="10代">10代</option><option value="20代">20代</option><option value="30代">30代</option><option value="40代">40代</option><option value="50代">50代</option><option value="60代">60代</option><option value="70歳以上">70歳以上</option></select>
+    </div>
+    <div class="q-card">
+      <div class="q-title">お住まいはどちらですか？<span class="required">*</span></div>
+      
+      <label class="choice-label"><input type="checkbox" name="entry.428643350" value="沖縄県"> 沖縄県</label><label class="choice-label"><input type="checkbox" name="entry.428643350" value="県外"> 県外</label>
+    </div>
+    <div class="q-card">
+      <div class="q-title">住んでいる市町村を記入してください。
+（県外の方は都道府県を記入）<span class="required">*</span></div>
+      
+      <input type="text" name="entry.938869054" required placeholder="回答を入力">
+    </div>
+    <div class="q-card">
+      <div class="q-title">知っている動物の名前全てにチェックを入れてください。<span class="required">*</span></div>
+      
+      <label class="choice-label"><input type="checkbox" name="entry.1211215915" value="ノグチゲラ"> ノグチゲラ</label><label class="choice-label"><input type="checkbox" name="entry.1211215915" value="ケナガネズミ"> ケナガネズミ</label><label class="choice-label"><input type="checkbox" name="entry.1211215915" value="オキナワトゲネズミ"> オキナワトゲネズミ</label><label class="choice-label"><input type="checkbox" name="entry.1211215915" value="ヤンバルクイナ"> ヤンバルクイナ</label><label class="choice-label"><input type="checkbox" name="entry.1211215915" value="全て知らない"> 全て知らない</label>
+    </div>
+      <button type="submit">送信</button>
+    </form>
+  </div>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location.href='https://sites.google.com/view/toge-gacha/%E3%83%9B%E3%83%BC%E3%83%A0';}"></iframe>
+  <script>let submitted = false;</script>
 </body>
 </html>
