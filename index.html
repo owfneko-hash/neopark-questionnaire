@@ -2,14 +2,18 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>アンケートフォーム</title>
-  <style>
-    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-    iframe { width: 100%; height: 100%; border: none; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アンケートへ移動中...</title>
+  <script>
+    // ★ここに末尾が /exec のGASのURLを貼り付けてください★
+    const gasUrl = "https://script.google.com/macros/s/AKfycbyYx1MhGO-gIaSr03GCXZVCtfTAvyCusI1ur_UiIqAg8NuuePUgjZjfqEHqM-BmsKqQ/exec";
+    window.location.replace(gasUrl);
+  </script>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbyYx1MhGO-gIaSr03GCXZVCtfTAvyCusI1ur_UiIqAg8NuuePUgjZjfqEHqM-BmsKqQ/exec"></iframe>
+  <p>画面が切り替わらない場合は、<a id="link" href="#">こちらをタップ</a>してください。</p>
+  <script>
+    document.getElementById("link").href = gasUrl;
+  </script>
 </body>
 </html>
